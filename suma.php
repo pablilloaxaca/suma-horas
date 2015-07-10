@@ -1,24 +1,15 @@
 <?php
-function SumaHoras( $hora, $minutos_sumar ) 
-{ 
-$minutoAnadir=$minutos_sumar;
-
-$segundos_horaInicial=strtotime($hora);
-
-$segundos_minutoAnadir=$minutoAnadir*60;
-
-$nuevaHora=date("H:i:s",$segundos_horaInicial+$segundos_minutoAnadir);
-
-return $nuevaHora;
-} //fin función
-
-$hora = '01:00:00';
-$minutos_sumarle   = 90;
-
-//EJECUTO LA FUNCIÓN y asigno resultado a una variable
-$resultado = SumaHoras( $hora , $minutos_sumarle );
-
-//IMPRIMO RESULTADO
-echo 'A esta Hora: '.$hora.' se le sumaran: '.$minutos_sumarle.' minutos : '.$resultado;
-
+function sumar($h1,$h2)
+{
+$h2h = date('H', strtotime($h2));
+$h2m = date('i', strtotime($h2));
+$h2s = date('s', strtotime($h2));
+$hora2 =$h2h." hour ". $h2m ." min ".$h2s ." second";
+ 
+$horas_sumadas= $h1." + ". $hora2;
+$text=date('H:i:s', strtotime($horas_sumadas)) ;
+echo $text;
+ 
+}
+echo sumar("05:20:00","05:20:30");
 ?>
