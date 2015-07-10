@@ -8,7 +8,7 @@ $hora2 =$h2h." hour ". $h2m ." min ".$h2s ." second";
  
 $horas_sumadas= $h1." + ". $hora2;
 $text=date('H:i:s', strtotime($horas_sumadas)) ;
-echo $text;
+return $text;
  
 }
 echo sumar("05:20:00","05:20:30");
